@@ -5,7 +5,7 @@ This library is a little enhancement of the hook **useSearchParams** in React Ro
 ### Dependencies
 
 - React 18
-- React Router 6 
+- React Router 6
 
 <br/>
 

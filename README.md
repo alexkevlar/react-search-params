@@ -39,7 +39,7 @@ Hook init:
 ```javascript
 function MyComponent() {
 
-  const { search, setSearch } = useQuerySearch();
+  const { search, setSearch } = useReactSearchParams();
   
   // rest of your code
 }
@@ -57,7 +57,7 @@ function MyComponent() {
 Set params:
 ```javascript
 
-const { setSearch } = useQuerySearch();
+const { setSearch } = useReactSearchParams();
 setSearch({ foo: "bar" })
 
 // Output
@@ -73,7 +73,7 @@ Get params:
 // Given an URL
 // http://localhost:3000/?foo=bar
 
-const { search } = useQuerySearch();
+const { search } = useReactSearchParams();
 
 console.log(search.toString());
 // Output

@@ -1,5 +1,5 @@
 {
-  "version": "0.1.4",
+  "version": "0.1.5",
   "license": "MIT",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
@@ -53,8 +53,8 @@
     "@types/react-dom": "^18.0.8",
     "husky": "^8.0.2",
     "react": "^18.2.0",
-    "react-router-dom": "^6.4.3",
     "react-dom": "^18.2.0",
+    "react-router-dom": "^6.4.3",
     "size-limit": "^8.1.0",
     "tsdx": "^0.14.1",
     "tslib": "^2.4.1",

@@ -1,4 +1,8 @@
-import { URLSearchParamsInit, useSearchParams } from 'react-router-dom';
+import { useSearchParams } from 'react-router-dom';
+
+type Search = Record<string, string>
+
+type SetSearch = (nextInit: Search, overwrite?: boolean, navigateOptions?: NavigateOptions) => void
 
 interface UseFiltersReturn {
   search: URLSearchParams,
@@ -7,13 +11,11 @@ interface UseFiltersReturn {
 
 type NavigateOptions = { replace?: boolean; state?: any; };
 
-export type SetSearch = (nextInit: URLSearchParamsInit, overwrite?: boolean, navigateOptions?: NavigateOptions) => void
-
 export const useReactSearchParams = (): UseFiltersReturn => {
 
   const [search, setQuerySearch] = useSearchParams();
 
-  const setSearch: SetSearch = (nextInit: any, overwrite?: boolean, navigateOptions?: NavigateOptions) => {
+  const setSearch: SetSearch = (nextInit, overwrite, navigateOptions) => {
 
     if (overwrite) {
       search.forEach((_value, key) => {
@@ -32,4 +34,3 @@ export const useReactSearchParams = (): UseFiltersReturn => {
   return { search, setSearch };
 
 };
-

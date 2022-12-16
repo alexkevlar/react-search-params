@@ -18,9 +18,21 @@ export const useReactSearchParams = (): UseFiltersReturn => {
   const setSearch: SetSearch = (nextInit, overwrite, navigateOptions) => {
 
     if (overwrite) {
-      search.forEach((_value, key) => {
+
+      const qs = search.toString();
+      const params = qs.split("&");
+
+      let paramsObj: Record<string, string> = {};
+
+      params.forEach((value) => {
+        const param = value.split("=");
+        paramsObj[param[0]] = param[1];
+      })
+
+      Object.keys(paramsObj).forEach((key) => {
         search.delete(key);
       });
+
     }
 
     Object.keys(nextInit).forEach((k) => {
